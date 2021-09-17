@@ -103,11 +103,6 @@ function endRound() {
 
 function attackMonster(mode) {
   let maxDamge = mode === MODE_ATTACK ? attackValue : strongAttackValue;
-  // if (mode === MODE_ATTACK) {
-  //   maxDamge = attackValue;
-  // } else if (mode === MODE_STRONG_ATTACK) {
-  //   maxDamge = strongAttackValue;
-  // }
 
   const damage = dealMonsterDamage(maxDamge);
   currentMonsterHealth -= damage;
@@ -136,7 +131,9 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
-  console.log(battleLog);
+  for (let i = 0; i < battleLog.length; i++) {
+    console.log(battleLog[i]);
+  }
 }
 
 attackBtn.addEventListener("click", attackHandler);
